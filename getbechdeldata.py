@@ -1,4 +1,4 @@
-""" This file scrapes http://bechdeltest.com/?list=all for movie info.
+"""  This file scrapes http://bechdeltest.com/?list=all for movie info.
 It stores movies that pass in pass_movies, and movies that fail in fail_movies.
 It then writes these two lists to csv files.
 
