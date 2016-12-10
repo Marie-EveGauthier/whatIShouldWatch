@@ -1,0 +1,9 @@
+tuto_test_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TutoTestBundle:Default:index }
+
+tuto_test_premier:
+    path:     /afficher/
+    defaults: { _controller: TutoTestBundle:Default:liste }
+
+
