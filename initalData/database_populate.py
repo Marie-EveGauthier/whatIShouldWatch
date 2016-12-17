@@ -10,11 +10,12 @@ with open('movieinfo.csv', 'rb') as csvfile:
 #Open database
 #Database structure: title(str), year(int), imdb(str), bechdel(boolean)
 #Example: 0001,A Clockwork Orange,1971,6,94,False,tt0066921
+#Maeve: I took out imdb id for now.
 import MySQLdb
-db = MySQLdb.connect(host="localhost",
-                     user="root",
-                     password="",
-                     db="watch")
+
+password = raw_input("Enter your mySQL password:")
+db = MySQLdb.connect("localhost","root",password,"watch")
+
 cur = db.cursor()
 
 
@@ -23,14 +24,12 @@ for item in movie_data:
     #title, year, imdb, bechdel
     title = str(item[1])
     year = int(item[2])
-    imdb = str(item[6])
+#    imdb = str(item[6])
     bechdel = bool(item[5])
-    print title, type(title)
-    print year, type(year)
-    print imdb, type(imdb)
-    print bechdel, type(bechdel)
-    #fix data type %s to %d?
-    cur.execute("INSERT INTO moviestwo (title,year,imdb,bechdel) VALUES (%s,%d,%s,%b)", (title,year,imdb,bechdel))
+#I took out imdb id
+#I got it to work with the php format strings
+    cur.execute('INSERT INTO moviestwo (title,year,bechdel) VALUES ("%s","%d","%d")' % \
+    (title,year,bechdel))
 
 #Commit changes
 db.commit()
