@@ -26,7 +26,7 @@ for item in movie_data:
     imdb = str(item[6])
     bechdel = bool(item[5])
     #fix data type %s to %d?
-    cur.execute("INSERT INTO moviestwo (title,year,imdb,bechdel) VALUES (%s,%s,%s,%s)", (title,year,imdb,bechdel))
+    cur.execute("INSERT INTO moviestwo (title,year,imdb,bechdel) VALUES (%s,%d,%s,%b)", (title,year,imdb,bechdel))
 
 #Commit changes
 db.commit()
