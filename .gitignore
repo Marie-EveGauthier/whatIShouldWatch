@@ -1,0 +1,4 @@
+Symfony/app/cache
+.DS_Store
+Symfony/app/logs/
+

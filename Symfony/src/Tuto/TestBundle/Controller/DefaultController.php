@@ -6,20 +6,27 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('TutoTestBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('TutoTestBundle:Default:firstview.html.twig');
     }
 
     public function listeAction()
     {
         $film = $this->getDoctrine()
             ->getRepository('TutoTestBundle:Films')
-        ->find();
+        ->find(1);
 
-        return $this->render('TutoTestBundle:Default:index.html.twig', array(
-            'film' => $film->getTire(), 'realisator' => $film-> getRealisateur()
-        ));
+        if($film) {
+            return $this->render('TutoTestBundle:Default:index.html.twig', array(
+                'film' => $film->getTire(), 'realisator' => $film-> getRealisateur()
+            ));
+        } else {
+            return $this->render('TutoTestBundle:Default:index.html.twig',array(
+                'film' => '',
+                'realisator' => ''
+            ));
+        }
 
     }
 
