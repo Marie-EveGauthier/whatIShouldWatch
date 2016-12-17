@@ -25,6 +25,10 @@ for item in movie_data:
     year = int(item[2])
     imdb = str(item[6])
     bechdel = bool(item[5])
+    print title, type(title)
+    print year, type(year)
+    print imdb, type(imdb)
+    print bechdel, type(bechdel)
     #fix data type %s to %d?
     cur.execute("INSERT INTO moviestwo (title,year,imdb,bechdel) VALUES (%s,%d,%s,%b)", (title,year,imdb,bechdel))
 
