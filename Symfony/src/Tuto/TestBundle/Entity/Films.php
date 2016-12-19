@@ -24,16 +24,18 @@ class Films
     /**
      * @var string
      *
-     * @ORM\Column(name="tire", type="string", length=30)
+     * @ORM\Column(name="title", type="string", length=30)
      */
-    private $tire;
+    private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="realisateur", type="string", length=40)
+     * @ORM\Column(name="year
+     ", type="string", length=40)
      */
-    private $realisateur;
+    private $year
+    ;
 
 
     /**
@@ -47,48 +49,88 @@ class Films
     }
 
     /**
-     * Set tire
+     * Set title
      *
-     * @param string $tire
+     * @param string $title
      * @return Films
      */
-    public function setTire($tire)
+    public function setTitle($title)
     {
-        $this->tire = $tire;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get tire
+     * Get title
      *
      * @return string 
      */
-    public function getTire()
+    public function getTitle()
     {
-        return $this->tire;
+        return $this->title;
     }
 
     /**
-     * Set realisateur
+     * Set year
      *
-     * @param string $realisateur
+     * @param year $year
+
      * @return Films
      */
-    public function setRealisateur($realisateur)
+    public function setYear
+    ($year
+    )
     {
-        $this->realisateur = $realisateur;
+        $this->year
+         = $year
+        ;
 
         return $this;
     }
 
     /**
-     * Get realisateur
+     * Get year
+
      *
-     * @return string 
+     * @return year 
      */
-    public function getRealisateur()
+    public function getYear
+    ()
     {
-        return $this->realisateur;
+        return $this->year
+        ;
+    }
+
+       /**
+     * Set bechdel
+     *
+     * @param tinyint $year
+
+     * @return Films
+     */
+    public function setBechdel
+    ($bechdel
+    )
+    {
+        $this->bechdel
+         = $bechdel
+        ;
+
+        return $this;
+    }
+
+    /**
+     * Get bechdel
+
+     *
+     * @return tinyint 
+     */
+    public function getBechdel
+    ()
+    {
+        return $this->bechdel
+        ;
     }
 }
+

@@ -14,7 +14,7 @@ with open('movieinfo.csv', 'rb') as csvfile:
 import MySQLdb
 
 password = raw_input("Enter your mySQL password:")
-db = MySQLdb.connect("localhost","root",password,"watch")
+db = MySQLdb.connect("localhost","root",password,"symfony")
 
 cur = db.cursor()
 
@@ -28,7 +28,7 @@ for item in movie_data:
     bechdel = bool(item[5])
 #I took out imdb id
 #I got it to work with the php format strings
-    cur.execute('INSERT INTO moviestwo (title,year,bechdel) VALUES ("%s","%d","%d")' % \
+    cur.execute('INSERT INTO Films (title,year,bechdel) VALUES ("%s","%d","%d")' % \
     (title,year,bechdel))
 
 #Commit changes

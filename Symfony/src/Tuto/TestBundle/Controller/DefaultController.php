@@ -19,12 +19,14 @@ class DefaultController extends Controller
 
         if($film) {
             return $this->render('TutoTestBundle:Default:index.html.twig', array(
-                'film' => $film->getTire(), 'realisator' => $film-> getRealisateur()
+                'film' => $film->getTitle(), 'year' => $film-> getYear(), 'bechdel' => $film-> getBechdel(),
             ));
         } else {
             return $this->render('TutoTestBundle:Default:index.html.twig',array(
                 'film' => '',
-                'realisator' => ''
+                'year' => '',
+                'bechdel' => '',
+
             ));
         }
 
