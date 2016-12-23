@@ -20,6 +20,8 @@ Once done, from the Symfony directory:
 
 Ref: http://symfony.com/doc/2.7/doctrine.html
 
+
+
 Python Scripts
 --------------
 
@@ -36,4 +38,13 @@ by typing
 
 in the terminal. The script will prompt you for your mySQL password. If it works correctly,
 the script should insert 3 columns of data into the database: title, year, and bechdel test
+
+
+
+Symfony Variables
+-----------------
+Variables used for database data (and so have to be changed if the database is changed), are located in:
+
+-Symfony/src/tuto/entity/films.php
+-Symfony/src/tuto/testbundle/controller/defaultcontroller
 result.
