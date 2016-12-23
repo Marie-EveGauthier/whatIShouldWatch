@@ -2,7 +2,7 @@
 #Get data about movies from movieinfo csv file
 #movie_data structure: id, title, year, female dialogue, make dialogue, imdb
 import csv
-with open('movieinfo.csv', 'rb') as csvfile:
+with open('initial-data/movieinfo.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile)
     movie_data = list(reader)
 
