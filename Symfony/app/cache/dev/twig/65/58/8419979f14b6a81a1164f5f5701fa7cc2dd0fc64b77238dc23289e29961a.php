@@ -7,23 +7,26 @@ class __TwigTemplate_65588419979f14b6a81a1164f5f5701fa7cc2dd0fc64b77238dc23289e2
     {
         parent::__construct($env);
 
-        $this->parent = false;
+        $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
+            'body' => array($this, 'block_body'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "::base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "the name of the film is ";
-        echo twig_escape_filter($this->env, (isset($context["film"]) ? $context["film"] : $this->getContext($context, "film")), "html", null, true);
-        echo "! <br>
-the realisator of the film is ";
-        // line 2
-        echo twig_escape_filter($this->env, (isset($context["realisator"]) ? $context["realisator"] : $this->getContext($context, "realisator")), "html", null, true);
-        echo "!
-";
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_body($context, array $blocks = array())
+    {
     }
 
     public function getTemplateName()
@@ -38,6 +41,6 @@ the realisator of the film is ";
 
     public function getDebugInfo()
     {
-        return array (  24 => 2,  19 => 1,);
+        return array (  28 => 2,);
     }
 }
