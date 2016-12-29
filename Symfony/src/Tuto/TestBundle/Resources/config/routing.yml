@@ -1,0 +1,24 @@
+
+
+
+
+
+tuto_test_first:
+    path:     /test/
+    defaults: { _controller: TutoTestBundle:Default:test }
+
+
+
+tuto_test_afficher:
+    path:     /index/
+    defaults: { _controller: TutoTestBundle:Default:index }
+
+
+tuto_test_second:
+    path:     /second/
+    defaults: { _controller: TutoTestBundle:Default:second }
+
+
+tuto_test_third:
+    path:     /third/
+    defaults: { _controller: TutoTestBundle:Default:third }

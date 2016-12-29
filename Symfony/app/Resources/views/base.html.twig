@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+    <ul>
+        <li><a href={{ path("tuto_test_first") }}> Films </a></li>
+        <li><a href={{ path("tuto_test_second") }}> Writers </a></li>
+        <li><a href="#"> Directors </a></li>
+    </ul>
+{% block body %}{% endblock %}
+</body>
+</html>
