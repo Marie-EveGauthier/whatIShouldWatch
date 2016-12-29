@@ -135,7 +135,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-<<<<<<< HEAD
         // tuto_test_first
         if (rtrim($pathinfo, '/') === '/test') {
             if (substr($pathinfo, -1) !== '/') {
@@ -170,20 +169,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::thirdAction',  '_route' => 'tuto_test_third',);
-=======
-        // tuto_test_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tuto_test_homepage')), array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::indexAction',));
-        }
-
-        // tuto_test_premier
-        if (rtrim($pathinfo, '/') === '/afficher') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'tuto_test_premier');
-            }
-
-            return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::listeAction',  '_route' => 'tuto_test_premier',);
->>>>>>> upstream/dev
         }
 
         // _welcome

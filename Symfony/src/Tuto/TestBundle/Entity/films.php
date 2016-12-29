@@ -5,12 +5,12 @@ namespace Tuto\TestBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Films
+ * films
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Tuto\TestBundle\Entity\FilmsRepository")
+ * @ORM\Entity(repositoryClass="Tuto\TestBundle\Entity\filmsRepository")
  */
-class Films
+class films
 {
     /**
      * @var integer
@@ -24,18 +24,37 @@ class Films
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=30)
+     * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="year
-     ", type="string", length=40)
+     * @ORM\Column(name="year", type="integer")
      */
-    private $year
-    ;
+    private $year;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="bechdel", type="integer")
+     */
+    private $bechdel;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dialogue_men", type="integer")
+     */
+    private $dialogueMen;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dialogue_women", type="integer")
+     */
+    private $dialogueWomen;
 
 
     /**
@@ -52,7 +71,7 @@ class Films
      * Set title
      *
      * @param string $title
-     * @return Films
+     * @return films
      */
     public function setTitle($title)
     {
@@ -74,63 +93,92 @@ class Films
     /**
      * Set year
      *
-     * @param year $year
-
-     * @return Films
+     * @param integer $year
+     * @return films
      */
-    public function setYear
-    ($year
-    )
+    public function setYear($year)
     {
-        $this->year
-         = $year
-        ;
+        $this->year = $year;
 
         return $this;
     }
 
     /**
      * Get year
-
      *
-     * @return year 
+     * @return integer 
      */
-    public function getYear
-    ()
+    public function getYear()
     {
-        return $this->year
-        ;
+        return $this->year;
     }
 
-       /**
+    /**
      * Set bechdel
      *
-     * @param tinyint $year
-
-     * @return Films
+     * @param integer $bechdel
+     * @return films
      */
-    public function setBechdel
-    ($bechdel
-    )
+    public function setBechdel($bechdel)
     {
-        $this->bechdel
-         = $bechdel
-        ;
+        $this->bechdel = $bechdel;
 
         return $this;
     }
 
     /**
      * Get bechdel
-
      *
-     * @return tinyint 
+     * @return integer 
      */
-    public function getBechdel
-    ()
+    public function getBechdel()
     {
-        return $this->bechdel
-        ;
+        return $this->bechdel;
+    }
+
+    /**
+     * Set dialogueMen
+     *
+     * @param integer $dialogueMen
+     * @return films
+     */
+    public function setDialogueMen($dialogueMen)
+    {
+        $this->dialogueMen = $dialogueMen;
+
+        return $this;
+    }
+
+    /**
+     * Get dialogueMen
+     *
+     * @return integer 
+     */
+    public function getDialogueMen()
+    {
+        return $this->dialogueMen;
+    }
+
+    /**
+     * Set dialogueWomen
+     *
+     * @param integer $dialogueWomen
+     * @return films
+     */
+    public function setDialogueWomen($dialogueWomen)
+    {
+        $this->dialogueWomen = $dialogueWomen;
+
+        return $this;
+    }
+
+    /**
+     * Get dialogueWomen
+     *
+     * @return integer 
+     */
+    public function getDialogueWomen()
+    {
+        return $this->dialogueWomen;
     }
 }
-

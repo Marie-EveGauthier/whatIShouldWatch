@@ -2,16 +2,11 @@
 
 {% block head %}
     <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
-<<<<<<< HEAD
 
-=======
-    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
->>>>>>> upstream/dev
 {% endblock %}
 
 {% block title 'Demo Bundle' %}
 
-<<<<<<< HEAD
     {% block body %}
         {% for flashMessage in app.session.flashbag.get('notice') %}
             <div class="flash-message">
@@ -31,26 +26,6 @@
         {% endblock %}
 
         <div class="block">
-=======
-{% block body %}
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-message">
-            <em>Notice</em>: {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% block content_header %}
-        <ul id="menu">
-            {% block content_header_more %}
-                <li><a href="{{ path('_demo') }}">Demo Home</a></li>
-            {% endblock %}
-        </ul>
-
-        <div style="clear: both"></div>
-    {% endblock %}
-
-    <div class="block">
->>>>>>> upstream/dev
         {% block content %}{% endblock %}
     </div>
 
