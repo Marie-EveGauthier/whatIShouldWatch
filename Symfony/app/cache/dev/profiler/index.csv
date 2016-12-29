@@ -128,6 +128,7 @@ d54e1e,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/afficher,1480437247
 a993cd,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/afficher/,1480438372,
 7f1867,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/afficher/,1480438375,
 874b68,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/afficher/,1480438415,
+<<<<<<< HEAD
 a23b91,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/,1481993470,
 9bad63,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/afficher,1481993505,
 b03f4e,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/afficher/,1481993507,2d1fb6
@@ -299,3 +300,5 @@ d6c2e5,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/index,1483044023,
 690dd5,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/index/,1483044024,
 4c943a,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/test/,1483044034,
 419fd6,::1,GET,http://localhost:8080/Symfony/web/app_dev.php/second/,1483044044,
+=======
+>>>>>>> upstream/dev

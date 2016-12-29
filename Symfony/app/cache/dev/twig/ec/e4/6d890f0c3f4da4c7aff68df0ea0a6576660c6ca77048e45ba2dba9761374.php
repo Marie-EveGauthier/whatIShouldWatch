@@ -7,6 +7,7 @@ class __TwigTemplate_ece46d890f0c3f4da4c7aff68df0ea0a6576660c6ca77048e45ba2dba97
     {
         parent::__construct($env);
 
+<<<<<<< HEAD
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
@@ -39,6 +40,18 @@ class __TwigTemplate_ece46d890f0c3f4da4c7aff68df0ea0a6576660c6ca77048e45ba2dba97
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['f'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+=======
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo "forza roma !";
+>>>>>>> upstream/dev
     }
 
     public function getTemplateName()
@@ -46,6 +59,7 @@ class __TwigTemplate_ece46d890f0c3f4da4c7aff68df0ea0a6576660c6ca77048e45ba2dba97
         return "TutoTestBundle:Default:firstview.html.twig";
     }
 
+<<<<<<< HEAD
     public function isTraitable()
     {
         return false;
@@ -54,5 +68,10 @@ class __TwigTemplate_ece46d890f0c3f4da4c7aff68df0ea0a6576660c6ca77048e45ba2dba97
     public function getDebugInfo()
     {
         return array (  34 => 3,  28 => 2,);
+=======
+    public function getDebugInfo()
+    {
+        return array (  19 => 1,);
+>>>>>>> upstream/dev
     }
 }
