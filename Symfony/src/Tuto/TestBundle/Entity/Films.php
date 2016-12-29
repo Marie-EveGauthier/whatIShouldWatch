@@ -5,12 +5,12 @@ namespace Tuto\TestBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Films
+ * films
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Tuto\TestBundle\Entity\FilmsRepository")
+ * @ORM\Entity(repositoryClass="Tuto\TestBundle\Entity\filmsRepository")
  */
-class Films
+class films
 {
     /**
      * @var integer
@@ -24,16 +24,37 @@ class Films
     /**
      * @var string
      *
-     * @ORM\Column(name="tire", type="string", length=30)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $tire;
+    private $title;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="realisateur", type="string", length=40)
+     * @ORM\Column(name="year", type="integer")
      */
-    private $realisateur;
+    private $year;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="bechdel", type="integer")
+     */
+    private $bechdel;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dialogue_men", type="integer")
+     */
+    private $dialogueMen;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dialogue_women", type="integer")
+     */
+    private $dialogueWomen;
 
 
     /**
@@ -47,48 +68,117 @@ class Films
     }
 
     /**
-     * Set tire
+     * Set title
      *
-     * @param string $tire
-     * @return Films
+     * @param string $title
+     * @return films
      */
-    public function setTire($tire)
+    public function setTitle($title)
     {
-        $this->tire = $tire;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get tire
+     * Get title
      *
      * @return string 
      */
-    public function getTire()
+    public function getTitle()
     {
-        return $this->tire;
+        return $this->title;
     }
 
     /**
-     * Set realisateur
+     * Set year
      *
-     * @param string $realisateur
-     * @return Films
+     * @param integer $year
+     * @return films
      */
-    public function setRealisateur($realisateur)
+    public function setYear($year)
     {
-        $this->realisateur = $realisateur;
+        $this->year = $year;
 
         return $this;
     }
 
     /**
-     * Get realisateur
+     * Get year
      *
-     * @return string 
+     * @return integer 
      */
-    public function getRealisateur()
+    public function getYear()
     {
-        return $this->realisateur;
+        return $this->year;
+    }
+
+    /**
+     * Set bechdel
+     *
+     * @param integer $bechdel
+     * @return films
+     */
+    public function setBechdel($bechdel)
+    {
+        $this->bechdel = $bechdel;
+
+        return $this;
+    }
+
+    /**
+     * Get bechdel
+     *
+     * @return integer 
+     */
+    public function getBechdel()
+    {
+        return $this->bechdel;
+    }
+
+    /**
+     * Set dialogueMen
+     *
+     * @param integer $dialogueMen
+     * @return films
+     */
+    public function setDialogueMen($dialogueMen)
+    {
+        $this->dialogueMen = $dialogueMen;
+
+        return $this;
+    }
+
+    /**
+     * Get dialogueMen
+     *
+     * @return integer 
+     */
+    public function getDialogueMen()
+    {
+        return $this->dialogueMen;
+    }
+
+    /**
+     * Set dialogueWomen
+     *
+     * @param integer $dialogueWomen
+     * @return films
+     */
+    public function setDialogueWomen($dialogueWomen)
+    {
+        $this->dialogueWomen = $dialogueWomen;
+
+        return $this;
+    }
+
+    /**
+     * Get dialogueWomen
+     *
+     * @return integer 
+     */
+    public function getDialogueWomen()
+    {
+        return $this->dialogueWomen;
     }
 }
