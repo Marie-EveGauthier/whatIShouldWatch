@@ -3,7 +3,7 @@ import MySQLdb
 
 mysqlpswd = raw_input("Enter your mySQL password:")
 
-db = MySQLdb.connect(host="localhost",    # your host, usually localhost
+db = MySQLdb.connect(host="localhost",     # your host, usually localhost
                      user="root",         # your username
                      passwd=mysqlpswd,  # your password
                      db="watch")

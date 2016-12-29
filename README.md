@@ -34,7 +34,7 @@ For the official version we have used phpmyadmin to create the table.
 Use database_populate.py to fill the database with the real data. You will need
 the python library mySQLdb installed for it to work. Run the script in your terminal
 by typing
-     python database_populate.py
+     ```python database_populate.py```
 
 in the terminal. The script will prompt you for your mySQL password. If it works correctly,
 the script should insert 3 columns of data into the database: title, year, and bechdel test
