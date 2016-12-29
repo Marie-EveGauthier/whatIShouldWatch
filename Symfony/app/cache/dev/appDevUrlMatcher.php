@@ -135,18 +135,40 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // tuto_test_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tuto_test_homepage')), array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::indexAction',));
-        }
-
-        // tuto_test_premier
-        if (rtrim($pathinfo, '/') === '/afficher') {
+        // tuto_test_first
+        if (rtrim($pathinfo, '/') === '/test') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'tuto_test_premier');
+                return $this->redirect($pathinfo.'/', 'tuto_test_first');
             }
 
-            return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::listeAction',  '_route' => 'tuto_test_premier',);
+            return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::testAction',  '_route' => 'tuto_test_first',);
+        }
+
+        // tuto_test_afficher
+        if (rtrim($pathinfo, '/') === '/index') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'tuto_test_afficher');
+            }
+
+            return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::indexAction',  '_route' => 'tuto_test_afficher',);
+        }
+
+        // tuto_test_second
+        if (rtrim($pathinfo, '/') === '/second') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'tuto_test_second');
+            }
+
+            return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::secondAction',  '_route' => 'tuto_test_second',);
+        }
+
+        // tuto_test_third
+        if (rtrim($pathinfo, '/') === '/third') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'tuto_test_third');
+            }
+
+            return array (  '_controller' => 'Tuto\\TestBundle\\Controller\\DefaultController::thirdAction',  '_route' => 'tuto_test_third',);
         }
 
         // _welcome
