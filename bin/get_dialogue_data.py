@@ -15,34 +15,40 @@ movie_data.csv"""
 #has several rows, linked by the script_id
 import csv
 with open('character_list5.csv') as csvfile:
-    dialogue_data = list(csv.DictReader(csvfile))
+    dialogue_data = list(csv.DictReader(csvfile)) #stores characters, words spoken
 
 #Get a set of the unique movie ids
-films = set(d['script_id'] for d in dialogue_data)
+films = list(set(d['script_id'] for d in dialogue_data))
 
 movie_percentages_info = []
 
-#Iterate through the unique movie ids
-for f in films:
-#Variables to collect the words spoken by male and female characters
+for film in films: #for film in films: #Iterate through the unique movie ids
+    print film
+    #Variables to collect the words spoken by male and female characters
     f_words = 0
     m_words = 0
-#Iterate through the data, looking for the entries matching this film (via id)
+    #Iterate through the data, looking for the entries matching this film (via id)
     for d in dialogue_data:
-        if d['script_id'] == f:
+        if d['script_id'] == film:
+            #print d['imdb_character_name'], d['gender'], d['words']
             if d['gender'] == 'f':
                 f_words = f_words + int(d['words'])
             elif d['gender'] == 'm':
                 m_words = m_words + int(d['words'])
             film_id = d['script_id']
-
-#Calculate percentages:
+    print f_words, m_words
+    #Calculate percentages:
     total = f_words + m_words
+    print 'total ', total
     f_percent = f_words * 100 / total
+    print 'f_percent ', f_percent
     m_percent = m_words * 100 / total
+    print 'm_percent ', m_percent
+    unit = [film_id, f_percent, m_percent]
+    print unit
+    movie_percentages_info.append(unit)
 
-    movie_percentages_info.append([film_id, f_percent, m_percent])
-
+print '\n', movie_percentages_info, '\n'
 
 #Get data on movie names (and years and imdb ids) from meta7 csv file
 import csv
@@ -61,18 +67,21 @@ complete_movie_data = []
 
 #Iterate through list which has dialogue percentages
 i = 0
-for w in movie_percentages_info:
+for movie in movie_percentages_info:
 #Iterate through list with movie names in, check if script ids match
-    w[1] = f_percent
-    w[2] = m_percent
-    for n in movie_name_info:
-        if w[0] == n[0]:
-            name = n[1]
-            imdb_id = n[2]
-            year = n[3]
+    for film in movie_name_info:
+        if movie[0] == film[0]:
+            name = film[1]
+            imdb_id = film[2]
+            year = film[3]
+    print name, imdb_id, year
+    f_percent = movie[1]
+    m_percent = movie[2]
+    print m_percent, f_percent
 #Add complete movie entry to complete_movie_data
 #film_id, name,year, %female, %male, bechdel, imdb_id
-    complete_movie_data.append((i, name, year, f_percent, m_percent, '', imdb_id))
+    unit = [i, name, year, f_percent, m_percent, '', imdb_id]
+    complete_movie_data.append(unit)
     i = i + 1
 
 with open('movie_data.csv', 'wb') as db:
