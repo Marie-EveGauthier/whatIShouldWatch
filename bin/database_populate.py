@@ -2,7 +2,7 @@
 #Get data about movies from movieinfo csv file
 #movie_data structure: id, title, year, female dialogue, make dialogue, imdb
 import csv
-with open('initial-data/movieinfo.csv', 'rb') as csvfile:
+with open('movieinfo.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile)
     movie_data = list(reader)
 
@@ -14,7 +14,7 @@ with open('initial-data/movieinfo.csv', 'rb') as csvfile:
 import MySQLdb
 
 password = raw_input("Enter your mySQL password:")
-db = MySQLdb.connect("localhost","root",password,"symfony")
+db = MySQLdb.connect("localhost","root",password,"sf2")
 
 cur = db.cursor()
 
@@ -28,8 +28,9 @@ for item in movie_data:
     bechdel = bool(item[5])
 #I took out imdb id
 #I got it to work with the php format strings
-    cur.execute('INSERT INTO Films (title,year,bechdel) VALUES ("%s","%d","%d")' % \
+    cur.execute('INSERT INTO films (title,year,bechdel,dialogue_men,dialogue_women) VALUES ("%s","%d","%d",0,0)' % \
     (title,year,bechdel))
+
 
 #Commit changes
 db.commit()
