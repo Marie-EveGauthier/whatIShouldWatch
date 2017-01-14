@@ -32,9 +32,9 @@ for film in films: #for film in films: #Iterate through the unique movie ids
         if d['script_id'] == film:
             #print d['imdb_character_name'], d['gender'], d['words']
             if d['gender'] == 'f':
-                f_words = f_words + int(d['words'])
+                f_words = f_words + float(d['words'])
             elif d['gender'] == 'm':
-                m_words = m_words + int(d['words'])
+                m_words = m_words + float(d['words'])
             film_id = d['script_id']
     print f_words, m_words
     #Calculate percentages:
