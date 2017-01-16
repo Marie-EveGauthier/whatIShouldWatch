@@ -6,7 +6,7 @@ mysqlpswd = raw_input("Enter your mySQL password:")
 db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      user="root",         # your username
                      passwd=mysqlpswd,  # your password
-                     db="watch")
+                     db="sf2")
 
 cur = db.cursor()
 
