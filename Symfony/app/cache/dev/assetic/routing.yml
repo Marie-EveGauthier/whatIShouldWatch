@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:/wamp64/www/whatIShouldWatch/Symfony/app/config/routing_dev.yml'
