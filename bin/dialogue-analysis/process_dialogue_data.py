@@ -36,13 +36,13 @@ for film in films: #for film in films: #Iterate through the unique movie ids
             elif d['gender'] == 'm':
                 m_words = m_words + float(d['words'])
             film_id = d['script_id']
-    print f_words, m_words
+
     #Calculate percentages:
     total = f_words + m_words
     print 'total ', total
-    f_percent = f_words * 100 / total
+    f_percent = round((f_words * 100 / total), 2)
     print 'f_percent ', f_percent
-    m_percent = m_words * 100 / total
+    m_percent = round((m_words * 100 / total), 2)
     print 'm_percent ', m_percent
     unit = [film_id, f_percent, m_percent]
     print unit
