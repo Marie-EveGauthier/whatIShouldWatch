@@ -1,0 +1,20 @@
+Categories from wikipedia - each name is queried for a list of categories they are members of.  
+
+
+
+
+To run spiders (in get_data/spiders/tutorial/spiders):
+- Navigate to get_data/spiders
+- From the terminal run 'scrapy crawl <spidername> -o <filename>.json'
+<filename> is the json file you will save the results in.  Use a new file as results will be added to what is already there (not overwritten)
+<spidername> is the name attribute of the spider class (not the file name or the class name)
+
+get_crew_urls.py (spider) gets the imdb urls for all crew members of the movies in movieinfo (crewurls.json)
+
+process_urls_for_noentry.py takes the noentry lists and crewurls.json, and produces csv files with the names of the directors and writers who dont have gender entries and the imdb url (director_noentry_imdburls.csv and writer_noentry_imdburls.csv)
+
+get_crew_bios.py (spider) produces a dictionary with the names and short bios (null or empty if no bio).  The file used must be changed manually (ie writers or directors)
+
+analyze_pronouns.py takes the files (both) with the bios, and looks for the first pronoun used.  This seems accurate so far.  The bios are short (we are not getting the whole bio - just the short one on the person's main imdb page) and if there is a pronoun it refers to the person.
+
+

@@ -1,5 +1,6 @@
 
 import csv, json, urllib
+from collections import Counter
 
 def process_data(input_list, output_table, current_movie_id):
     for person in input_list:
@@ -21,16 +22,21 @@ def process_data(input_list, output_table, current_movie_id):
             output_table.append([person, [current_movie_id], []])
 
 #Get data we already have for movies:
-with open('movie_data_complete.csv') as csvfile:
+with open('movieinfo.csv') as csvfile:
     movie_data = list(csv.reader(csvfile))
 
 #Lists to store the data ([writer, [movie imdb ids], [tags]])
 writers_table = []
 directors_table = []
 
+writers_duplicates = []
+directors_duplicates = []
+
+all_data = []
+
 #Use while loop (instead of for) to make testing/ debugging easier
 i = 0
-while i <200:
+while i <2000:
     #Get writer and director info for each movie, from the omdb, using the imdb id
     this_movie = movie_data[i]
     imdb_id = this_movie[6]
@@ -44,12 +50,30 @@ while i <200:
         writers = data['Writer'].encode('utf-8').split(',')
         #Process people in lists of writers
         process_data(writers, writers_table, imdb_id)
+        for writer in writers:
+            writers_duplicates.append(writer)
+    else:
+        print 'no writers'
     if 'Director' in data:
         directors = data['Director'].encode('utf-8').split(',')
         #Process people in lists of directors
         process_data(directors, directors_table, imdb_id)
+        for director in directors:
+            directors_duplicates.append(director)
+    else:
+        print 'no directors'
+    #print '\n', 'writers: ', writers, '\n', 'directors: ', directors, '\n'
+
+    all_data.append([this_movie[1], 'directors: ', directors, 'writers: ', writers])
 
     i = i + 1
+
+print 'len writers: ', len(writers_table)
+print 'len directors: ', len(directors_table)
+
+print 'len writers_duplicates : ', len(writers_duplicates)
+print 'len directors_duplicates: ', len(directors_duplicates)
+
 
 
 #Function to store the data in a csv file (for now)
@@ -61,3 +85,4 @@ def write_csv(file_name, list_name):
 
 write_csv('directors_data.csv', directors_table)
 write_csv('writers_data.csv', writers_table)
+write_csv('all_data.csv', all_data)

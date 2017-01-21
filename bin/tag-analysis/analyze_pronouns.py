@@ -1,59 +1,73 @@
 
-import csv, requests, json, nltk
+import csv, requests, json, nltk, re
 
-with open('writers_data.csv') as csvfile:
-    movie_data = list(csv.reader(csvfile))
+"""
+SOme are incorrect - run to print a list to check.
+eg captain - because need to remove the links -  check if that is working or not
+"""
 
-people = [x[0] for x in movie_data]
 pronouns = ['she', 'her', 'he', 'his']
 genders = ['woman', 'woman', 'man', 'man', 'nonbinary', 'nonbinary']
 
 
-
-def get_wiki_article(name):
-    #Get data in article on person
-    name = people[i].replace(' ','%20')
-    print name
-    address = 'http://en.wikipedia.org/w/api.php?format=json&action=query&titles={search_query}&prop=revisions&exintro&rvprop=content'.format(search_query=name)
-    response = requests.get(address)
-    #print 'response.status_code = ', response.status_code
-    data = response.json()
-    return json.dumps(data) #turns it into a string
-
-
-def get_position_useful_text(string):
-    position = 0
-    if ' is ' in string:
-        position = string.find(' is ')
-    elif ' was ' in string:
-        position = string.find(' was ')
-    else:
-        print 'text not found'
-    start = position
-    end = position+1500
-    return start, end
-
 def tokenize_and_search_for_pronouns(string):
-    #tokenize the string, then search for pronouns
-    words = nltk.word_tokenize(string)
-    #print words
-    gender = ''
-    for word in words:
-        for number in range(len(pronouns)):
-            if word.lower() == pronouns[number]:
-                gender = genders[number]
-                return gender
+    if string:
+        string = re.sub('<.+?', ' ', string)
+        #tokenize the string, then search for pronouns
+        words = nltk.word_tokenize(string)
+        # this assumes a short bio, where the first pronoun used reflects gender
+        gender = ''
+        pronouns_used = [] # to look at most frequent pronoun used?
+        for word in words:
+            for number in range(len(pronouns)):
+                if word.lower() == pronouns[number]:
+                    gender = genders[number]
+                    return gender
     return 'unknown'
 
-i = 0
-while i <50:
-    print people[i]
-    string = get_wiki_article(people[i])
-    start, end = get_position_useful_text(string)
-    string = string[start:end]
-    #print string
-    gender = tokenize_and_search_for_pronouns(string)
-    print gender
+def process_list_of_bios(filename, label):
+    with open(filename) as jsonfile:
+        biodata = json.load(jsonfile)
 
-    #move through while loop
-    i = i + 1
+    men = 0
+    names_men = []
+    women = 0
+    names_women = []
+    unknown = 0
+    names_unknown = []
+
+    for line in biodata:
+        #print line
+        dictionary = dict(line)
+        #if dictionary['bio']:
+        gender = tokenize_and_search_for_pronouns(dictionary['bio'])
+        if gender == 'man':
+            men = men + 1
+            names_men.append(dictionary['name'])
+        elif gender == 'woman':
+            women = women + 1
+            names_women.append(dictionary['name'])
+        else:
+            unknown = unknown + 1
+            names_unknown.append(dictionary['name'])
+
+    print 'for ', filename, ' there are: '
+    print 'women: ', women
+    print names_women, '\n'
+    print 'men: ', men
+    print names_men, '\n'
+    print 'unknown: ', unknown
+    print names_unknown, '\n'
+
+    ### write lists to file
+    lists = [names_women, names_men, names_unknown]
+    labels = [label+'women.txt', label+'men.txt', label+'unknown.txt']
+    for i in range(len(lists)):
+        with open(labels[i], 'wb') as h:
+            for name in lists[i]:
+                h.write(name +'\n')
+
+
+
+process_list_of_bios('writer_bios.json', 'writers')
+process_list_of_bios('director_bios.json', 'directors')
