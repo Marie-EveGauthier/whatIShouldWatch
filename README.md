@@ -7,10 +7,11 @@ Installation & Configuration
 
 PHP: don't use PHP 7
 
-Update Symfony/app/config/parameters.yml to reflect
+1. Go to the folder Symfony/app/config/
+2. Copy the file parameters.yml.dist and save it as parameters.yml
+3. Update Symfony/app/config/parameters.yml to reflect
 your MySQL installation.
-
-Once done, from the Symfony directory:
+4. Once done, from the Symfony directory :
 
      php app/console doctrine:database:create
      php app/console doctrine:generate:entities Tuto
