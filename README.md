@@ -13,7 +13,7 @@ PHP: don't use PHP 7
 your MySQL installation.
 4. Once done, from the Symfony directory :
 
-```
+```Bash
      php app/console doctrine:database:create
      php app/console doctrine:generate:entities Tuto
      php app/console doctrine:generate:entities \
