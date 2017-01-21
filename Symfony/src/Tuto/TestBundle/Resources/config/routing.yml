@@ -1,6 +1,8 @@
 
 
-
+tuto_test_base:
+    path:     /home/
+    defaults: { _controller: TutoTestBundle:Default:base }
 
 
 tuto_test_first:
