@@ -7,17 +7,19 @@ Installation & Configuration
 
 PHP: don't use PHP 7
 
-Update Symfony/app/config/parameters.yml to reflect
+1. Go to the folder `Symfony/app/config/`
+2. Copy the file `parameters.yml.dist` and save it as `parameters.yml`
+3. Update `Symfony/app/config/parameters.yml` to reflect
 your MySQL installation.
+4. Once done, from the Symfony directory :
 
-Once done, from the Symfony directory:
-
+```Bash
      php app/console doctrine:database:create
      php app/console doctrine:generate:entities Tuto
      php app/console doctrine:generate:entities \
          Tuto/TestBundle
      php app/console doctrine:schema:update --force
-
+```
 Ref: http://symfony.com/doc/2.7/doctrine.html
 
 
@@ -34,7 +36,7 @@ For the official version we have used phpmyadmin to create the table.
 Use database_populate.py to fill the database with the real data. You will need
 the python library mySQLdb installed for it to work. Run the script in your terminal
 by typing
-     python database_populate.py
+     ```python database_populate.py```
 
 in the terminal. The script will prompt you for your mySQL password. If it works correctly,
 the script should insert 3 columns of data into the database: title, year, and bechdel test
