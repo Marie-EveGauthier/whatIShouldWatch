@@ -14,8 +14,7 @@ with open('movieinfo.csv', 'rb') as csvfile:
 import MySQLdb
 
 password = raw_input("Enter your mySQL password:")
-db = MySQLdb.connect("localhost","root",password,"sf2")
-
+db = MySQLdb.connect("127.0.0.1","root",password,"sf2", port=8889)
 cur = db.cursor()
 
 
