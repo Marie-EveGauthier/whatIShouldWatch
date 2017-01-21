@@ -1,6 +1,5 @@
 
 import csv, json, urllib
-from collections import Counter
 
 def process_data(input_list, output_table, current_movie_id):
     for person in input_list:
