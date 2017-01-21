@@ -1,15 +1,16 @@
 """
-This gets and prints (all) the wiki categories of the writers.  Right now the
-loop at the bottom is set to just the first 50.
+This gets all the wikipedia categories for either the writers or directors on our list
+and saves them to a file.
 """
 
 
 import csv, requests, json
 
-with open('writers_data.csv') as csvfile:
-    writers_data = list(csv.reader(csvfile))
+ifilename = raw_input("Enter the file you want to read from:\n")
+with open(ifilename) as csvfile:
+    names_data = list(csv.reader(csvfile))
 
-people = [x[0] for x in writers_data]
+people = [x[0] for x in names_data]
 
 def get_wiki_cats(name):
     #Get data in article on person
@@ -37,7 +38,7 @@ def get_wiki_cats(name):
 
 #Create a dictionary to save the people as keys and the list of categories as values.
 
-writer_categories={}
+people_categories={}
 
 #Makes a dictionary with only first 10 people
 #i = 0
@@ -50,7 +51,7 @@ writer_categories={}
 
 #Makes dictionary of all writers in file
 for person in people:
-    writer_categories[person] = get_wiki_cats(person)
+    people_categories[person] = get_wiki_cats(person)
 
 #Function to save the dictionary in a csv file (for now)
 def write_csv(file_name, dict_name):
@@ -58,4 +59,5 @@ def write_csv(file_name, dict_name):
         writer = csv.writer(data)
         writer.writerows(dict_name.items())
 
-write_csv('writer_categories.csv', writer_categories)
+ofilename = raw_input("Enter the name of the file where you want to save the categories:\n")
+write_csv(ofilename, people_categories)
