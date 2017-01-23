@@ -41,4 +41,10 @@ class DefaultController extends Controller {
         return $this->render('TutoTestBundle:Default:index.html.twig');
     }
 
+    public function baseAction() {
+
+        return $this->render('TutoTestBundle:Default.base.html.twig');
+        
+    }
+
 }

@@ -8,6 +8,7 @@
 !/Symfony/app/cache/.gitkeep
 !/Symfony/app/logs/.gitkeep
 
+
 # Parameters
 /Symfony/app/config/parameters.yml
 /Symfony/app/config/parameters.ini
