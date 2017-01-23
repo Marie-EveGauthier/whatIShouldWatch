@@ -6,7 +6,7 @@
 5,Magnum Force,1973,8.23,91.77,,tt0070355
 6,Ouija,2014,75.49,24.51,True,tt1204977
 7,All the Boys Love Mandy Lane,2006,50.14,49.86,,tt0490076
-8,"""O Brother","Where Art Thou?""",2000,3.56,96.44,,tt0190590
+8,"O Brother,Where Art Thou?",2000,3.56,96.44,,tt0190590
 9,Frances,1982,59.43,40.57,True,tt0083967
 10,Fracture,2007,14.87,85.13,False,tt0488120
 11,Foxcatcher,2014,0.0,100.0,False,tt1100089
@@ -18,7 +18,7 @@
 17,1492: Conquest of Paradise,1992,5.98,94.02,,tt0103594
 18,Mr. Smith Goes to Washington,1939,6.17,93.83,False,tt0031679
 19,Taken 2,2012,31.58,68.42,False,tt1397280
-20,"""Monsters","Inc.""",2001,3.77,96.23,,tt0198781
+20,"Monsters,Inc.",2001,3.77,96.23,,tt0198781
 21,The Family Man,2000,28.62,71.38,,tt0218967
 22,Lawless,2012,9.96,90.04,False,tt1212450
 23,Fantastic Mr. Fox,2009,6.49,93.51,False,tt0432283
@@ -600,7 +600,7 @@
 599,Sexual Life,2005,55.99,44.01,,tt0376874
 600,The Lady in the Van,2015,45.59,54.41,True,tt3722070
 601,Sex and the City,2008,83.04,16.96,True,tt1000774
-602,"""Sex",Lies,"and Videotape""",1989,55.88,44.12,,tt0098724
+602,"Sex, Lies, and Videotape",1989,55.88,44.12,,tt0098724
 603,Changeling,2008,31.95,68.05,True,tt0824747
 604,At First Sight,1999,39.49,60.51,,tt0132512
 605,Cellular,2004,21.4,78.6,True,tt0337921
@@ -662,7 +662,7 @@
 661,Atonement,2007,55.22,44.78,True,tt0783233
 662,Blue Jasmine,2013,75.65,24.35,True,tt2334873
 663,Sinister,2012,29.67,70.33,False,tt1922777
-664,"""Synecdoche","New York""",2008,53.35,46.65,,tt0383028
+664,"Synecdoche, New York",2008,53.35,46.65,,tt0383028
 665,Christine,1983,28.73,71.27,False,tt0085333
 666,Adaptation.,2002,29.58,70.42,True,tt0268126
 667,People Like Us,2012,45.76,54.24,True,tt1716777
@@ -748,7 +748,7 @@
 747,Second Coming,2014,65.06,34.94,,tt2837296
 748,Green Lantern,2011,17.33,82.67,False,tt1133985
 749,Suspect Zero,2004,16.36,83.64,,tt0324127
-750,"""Good Night","and Good Luck.""",2005,16.62,83.38,,tt0433383
+750,"Good Night, and Good Luck.",2005,16.62,83.38,,tt0433383
 751,21,2008,7.45,92.55,True,tt0478087
 752,The Messenger,2009,14.89,85.11,False,tt0790712
 753,The Great Gatsby,2013,17.52,82.48,True,tt1343092
@@ -913,7 +913,7 @@
 912,The Hudsucker Proxy,1994,21.46,78.54,False,tt0110074
 913,Being John Malkovich,1999,38.26,61.74,True,tt0120601
 914,A Night at the Roxbury,1998,10.19,89.81,,tt0120770
-915,"""The Adventures of Priscilla","Queen of the Desert""",1994,17.5,82.5,,tt0109045
+915,"The Adventures of Priscilla, Queen of the Desert",1994,17.5,82.5,,tt0109045
 916,The Incredibles,2004,46.92,53.08,True,tt0317705
 917,Holes,2003,11.18,88.82,False,tt0311289
 918,25th Hour,2002,10.59,89.41,False,tt0307901
@@ -1095,7 +1095,7 @@
 1094,Blade: Trinity,2004,29.22,70.78,,tt0359013
 1095,The Cable Guy,1996,10.17,89.83,False,tt0115798
 1096,The Duchess,2008,61.32,38.68,True,tt0864761
-1097,"""The Chronicles of Narnia: The Lion","the Witch and the Wardrobe""",2005,39.64,60.36,,tt0363771
+1097,"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",2005,39.64,60.36,,tt0363771
 1098,Emma,1996,74.84,25.16,True,tt0116191
 1099,The Corruptor,1999,5.73,94.27,,tt0142192
 1100,Crash,2004,23.94,76.06,True,tt0375679
@@ -1136,7 +1136,7 @@
 1135,Star Trek V: The Final Frontier,1989,12.03,87.97,False,tt0098382
 1136,Isle of the Dead,1945,33.72,66.28,True,tt0037820
 1137,Body Heat,1981,36.89,63.11,False,tt0082089
-1138,"""Bodies","Rest & Motion""",1993,42.89,57.11,,tt0106447
+1138,"Bodies, Rest & Motion",1993,42.89,57.11,,tt0106447
 1139,The Counselor,2013,20.17,79.83,True,tt2193215
 1140,Bones,2001,20.4,79.6,,tt0166110
 1141,Groundhog Day,1993,30.48,69.52,False,tt0107048
@@ -1336,7 +1336,7 @@
 1335,Three Kings,1999,9.09,90.91,,tt0120188
 1336,Thunderbirds,2004,17.71,82.29,,tt0167456
 1337,Mallrats,1995,12.38,87.62,False,tt0113749
-1338,"""I","Robot""",2004,25.15,74.85,,tt0343818
+1338,"I, Robot",2004,25.15,74.85,,tt0343818
 1339,In Bruges,2008,7.91,92.09,False,tt0780536
 1340,Mumford,1999,31.61,68.39,,tt0140397
 1341,The Bounty Hunter,2010,35.08,64.92,,tt1038919
@@ -1658,7 +1658,7 @@
 1657,Maximum Overdrive,1986,29.51,70.49,False,tt0091499
 1658,Hearts in Atlantis,2001,28.09,71.91,,tt0252501
 1659,3 Days to Kill,2014,45.06,54.94,True,tt2172934
-1660,"""Jeff","Who Lives at Home""",2011,24.39,75.61,,tt1588334
+1660,"Jeff, Who Lives at Home",2011,24.39,75.61,,tt1588334
 1661,The Other Guys,2010,7.23,92.77,False,tt1386588
 1662,The Beaver,2011,31.58,68.42,,tt1321860
 1663,Cyrus,2010,37.83,62.17,False,tt1336617
@@ -1872,7 +1872,7 @@
 1871,Harry Potter and the Chamber of Secrets,2002,14.45,85.55,True,tt0295297
 1872,Hannah and Her Sisters,1986,42.04,57.96,True,tt0091167
 1873,Hanna,2011,54.59,45.41,True,tt0993842
-1874,"""Happy Birthday","Wanda June""",1971,23.06,76.94,,tt0067180
+1874,"Happy Birthday, Wanda June",1971,23.06,76.94,,tt0067180
 1875,Hard to Kill,1990,28.57,71.43,,tt0099739
 1876,Trouble in Paradise,1932,41.93,58.07,,tt0023622
 1877,Hard Rain,1998,12.79,87.21,,tt0120696
@@ -1887,8 +1887,8 @@
 1886,Living in Oblivion,1995,34.85,65.15,,tt0113677
 1887,The Ploughman's Lunch,1983,31.18,68.82,,tt0086122
 1888,The Lion King,1994,13.22,86.78,False,tt0110357
-1889,"""Lock","Stock and Two Smoking Barrels""",1998,0.0,100.0,,tt0120735
-1890,"""Crazy",Stupid,"Love.""",2011,34.25,65.75,,tt1570728
+1889,"Lock, Stock and Two Smoking Barrels",1998,0.0,100.0,,tt0120735
+1890,"Crazy, Stupid, Love.",2011,34.25,65.75,,tt1570728
 1891,Uncle Buck,1989,37.87,62.13,True,tt0098554
 1892,Horns,2013,19.33,80.67,True,tt1528071
 1893,Creation,2009,26.41,73.59,,tt0974014
