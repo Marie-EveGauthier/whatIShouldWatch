@@ -2,7 +2,7 @@
 #Get data about movies from movieinfo csv file
 #movie_data structure: id, title, year, female dialogue, make dialogue, imdb
 import csv
-with open('initial-data/movieinfo.csv', 'rb') as csvfile:
+with open('movieinfo.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile)
     movie_data = list(reader)
 
@@ -14,6 +14,10 @@ with open('initial-data/movieinfo.csv', 'rb') as csvfile:
 import MySQLdb
 
 password = raw_input("Enter your mySQL password:")
+<<<<<<< HEAD:bin/populate_database.py
+=======
+db = MySQLdb.connect("localhost","root",password,"symfony")
+>>>>>>> parent of d0aefaf... modification for the script python:bin/database_populate.py
 
 db = MySQLdb.connect("127.0.0.1","root",password,"sf2", port=8889)
 cur = db.cursor()
@@ -25,19 +29,12 @@ for item in movie_data:
     title = str(item[1])
     year = int(item[2])
 #    imdb = str(item[6])
-    if item[5]=="True" :
-        bechdel=True
-    else :
-        bechdel=False
-
+    bechdel = bool(item[5])
 #I took out imdb id
 #I got it to work with the php format strings
-    if item[5]=="" :
-             cur.execute('INSERT INTO Films (title,year) VALUES ("%s","%d")' % \
-             (title,year))
-    else:
-             cur.execute('INSERT INTO Films (title,year,bechdel) VALUES ("%s","%d","%d")' % \
-             (title,year,bechdel))
+    cur.execute('INSERT INTO Films (title,year,bechdel) VALUES ("%s","%d","%d")' % \
+    (title,year,bechdel))
+
 #Commit changes
 db.commit()
 
