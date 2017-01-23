@@ -41,9 +41,9 @@ class DefaultController extends Controller {
         return $this->render('TutoTestBundle:Default:index.html.twig');
     }
 
-    public function baseAction() {
+    public function filtersAction() {
 
-        return $this->render('TutoTestBundle:Default.base.html.twig');
+        return $this->render('TutoTestBundle:Default:filters.html.twig');
         
     }
 
