@@ -34,3 +34,18 @@ with open('directors_data.csv', 'rb') as csvfile:
                 line[2]=False
             allrows.append(line)
         writer.writerows(allrows)
+
+allrows = []
+with open('writers_data.csv', 'rb') as csvfile:
+    with open('writers_data_gender.csv', 'wb') as output:
+        reader = csv.reader(csvfile)
+        writer = csv.writer(output)
+        for line in reader:
+            if line[0] in women_writers:
+                line[2]=True
+                #line.append(True)
+            else:
+                #line.append(False)
+                line[2]=False
+            allrows.append(line)
+        writer.writerows(allrows)
