@@ -2,27 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}What Should I Watch{% endblock %}</title>
+        <title>What Should I Watch</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
-        <h1>What Should I Watch</h1>
-        <h2>Diversity in films</h2>
-        <p>Looking to watch a movie respectful with women representation?</p>
-
-        <div id="sortBy">
-
-            {% block sortBy %}
+        <header>
+            <div class="topMenn">
                 <ul>
-                    <li>Passed bechdel test</li>
-                    <li><Woman directed></li>
-                    <li>Woman written</li>
-                    <li>Most dialogues said by women</li>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Diversity in movies</li>
+
                 </ul>
-            {% endblock %}
+            </div>
+            <div class="title">
+                <h1>What Should I Watch?</h1>
+                <h2>Diversity in films</h2>
+            </div>
+        </header>
+        <div class="filter">
+            {% block filters %}{% endblock %}
         </div>
 
-        <div id="content">
-            {% block body %}{% endblock %}
-        </div>
+        
+    <footer>
+        <p>Project created as part of LAB12. LAB12 is 12-week skills incubator featured by <a href="http://www.pitonneux.com/">les Pitonneux</a>
+    </footer>
+
     </body>
 </html>
