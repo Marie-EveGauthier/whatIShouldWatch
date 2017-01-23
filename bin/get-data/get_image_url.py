@@ -2,7 +2,7 @@ import csv, json, urllib
 
 
 #Get data we already have for movies:
-with open('movieinfo.csv') as csvfile:
+with open('../../initial-data/movieinfo.csv') as csvfile:
     movie_data = list(csv.reader(csvfile))
 
 #Lists to store the data
@@ -40,4 +40,4 @@ def write_csv(file_name, list_name):
         for row in list_name:
             writer.writerow((row))
 
-write_csv('movie_data_with_url.csv', movie_data_with_url)
+write_csv('../../initial-data/movie_data_with_url.csv', movie_data_with_url)
