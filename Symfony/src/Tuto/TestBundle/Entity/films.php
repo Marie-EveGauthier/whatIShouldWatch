@@ -60,7 +60,7 @@ class films
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -83,7 +83,7 @@ class films
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -106,7 +106,7 @@ class films
     /**
      * Get year
      *
-     * @return integer
+     * @return integer 
      */
     public function getYear()
     {
@@ -129,7 +129,7 @@ class films
     /**
      * Get bechdel
      *
-     * @return integer
+     * @return integer 
      */
     public function getBechdel()
     {
@@ -152,7 +152,7 @@ class films
     /**
      * Get dialogueMen
      *
-     * @return integer
+     * @return integer 
      */
     public function getDialogueMen()
     {
@@ -175,7 +175,7 @@ class films
     /**
      * Get dialogueWomen
      *
-     * @return integer
+     * @return integer 
      */
     public function getDialogueWomen()
     {
