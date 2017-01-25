@@ -1,24 +1,16 @@
-tuto_test_first:
+tuto_test_test:
     path:     /test/
     defaults: { _controller: TutoTestBundle:Default:test }
 
 
 
-tuto_test_afficher:
-    path:     /index/
-    defaults: { _controller: TutoTestBundle:Default:index }
-
-
-tuto_test_second:
-    path:     /second/
-    defaults: { _controller: TutoTestBundle:Default:second }
-
-
-tuto_test_third:
-    path:     /third/
-    defaults: { _controller: TutoTestBundle:Default:third }
 
 tuto_test_filter:
     path:     /filter/
     defaults: { _controller: TutoTestBundle:Default:filters }
+
+tuto_test_resultat:
+    path:     /resultat/
+    defaults: { _controller: TutoTestBundle:Default:resultat }
+
 
