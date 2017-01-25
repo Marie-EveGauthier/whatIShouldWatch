@@ -7,7 +7,11 @@ with open('../initial-data/directors_data_gender.csv', 'rb') as csvfile:
     directors_data = list(reader)
 
 password = raw_input("Enter your mySQL password:")
-db = MySQLdb.connect("127.0.0.1","root",password,"sf2") #ADD BACK POR!?
+port_number = raw_input("Enter your mySQL port number if required:")
+if len(port_number) > 0:
+    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=str(port_number))
+else:
+    db = MySQLdb.connect("127.0.0.1","root",password,"sf2")
 cur = db.cursor()
 
 for item in directors_data:
