@@ -37,11 +37,15 @@ Run the first script in your terminal by typing
 in the terminal. The script will prompt you for your mySQL password and then your SQL port number.
 
 You can then run the scripts to populate the writer and director tables:
+
      ```python bin/python populate_database_writers.py```
+
      ```python bin/python populate_database_directors.py```
 
 You can then run the scripts to populate the connector tables:
+
      ```python bin/python populate_database_writerfilm.py```
+
      ```python bin/python populate_database_directorfilm.py```
 
 
