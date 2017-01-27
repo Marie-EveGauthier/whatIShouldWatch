@@ -1,5 +1,5 @@
 tuto_test_first:
-    path:     /test/
+    path:     /
     defaults: { _controller: TutoTestBundle:Default:test }
 
 
