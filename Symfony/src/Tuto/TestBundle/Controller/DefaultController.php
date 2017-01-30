@@ -2,13 +2,7 @@
 
 namespace Tuto\TestBundle\Controller;
 
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\RedditAuthor;
-use AppBundle\Entity\RedditPost;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 
@@ -26,7 +20,7 @@ class DefaultController extends Controller {
         return $this->render('TutoTestBundle:Default:filters.html.twig');
     }
 
-    public function resultatAction(Request $request) {
+    public function resultatAction() {
 // for the request DBL
         $em = $this->getDoctrine()->getManager();
         // to get the value of the checkbox
