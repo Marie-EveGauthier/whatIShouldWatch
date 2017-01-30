@@ -3,25 +3,25 @@ import csv
 
 women_directors = []
 
-with open('women_directors.txt','rb') as h:
+with open('../initial-data/women_directors.txt','rb') as h:
     for line in h:
         line = line.lstrip().rstrip() #strip whitespace from beginning and newline from end
         if line == "Robert Pulcini": continue
         women_directors.append(line)
 
 women_writers = []
-with open('women_writers.txt', 'rb') as h:
+with open('../initial-data/women_writers.txt', 'rb') as h:
     for line in h:
         line = line.lstrip().rstrip()
         women_writers.append(line)
 
-with open('writerswomen.txt') as h:
+with open('../initial-data/writerswomen.txt') as h:
     for line in h:
         line = line.lstrip().rstrip()
         women_writers.append(line)
 
 allrows = []
-with open('directors_data.csv', 'rb') as csvfile:
+with open('../initial-data/directors_data.csv', 'rb') as csvfile:
     with open('directors_data_gender.csv', 'wb') as output:
         reader = csv.reader(csvfile)
         writer = csv.writer(output)
@@ -36,7 +36,7 @@ with open('directors_data.csv', 'rb') as csvfile:
         writer.writerows(allrows)
 
 allrows = []
-with open('writers_data.csv', 'rb') as csvfile:
+with open('../initial-data/writers_data.csv', 'rb') as csvfile:
     with open('writers_data_gender.csv', 'wb') as output:
         reader = csv.reader(csvfile)
         writer = csv.writer(output)

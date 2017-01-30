@@ -1,6 +1,6 @@
-
 import csv
 import MySQLdb
+import ast
 
 with open('../initial-data/directors_data_gender.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile.read().decode('utf-8-sig').encode('utf-8').splitlines())
@@ -16,14 +16,19 @@ cur = db.cursor()
 
 for item in directors_data:
     name = str(item[0])
-    if item[2]== "True":
-        gender = 'W'
-    else:
-        gender = ''
+    imdb_ids = ast.literal_eval(item[1])
+    for current_imdb_id in imdb_ids: #['tt1939659']:  #imdb_ids:tt0066921', '
+        print 'current_imdb_id ', current_imdb_id
+        cur.execute("SELECT id FROM films WHERE imdb_id = ('%s')" % (current_imdb_id))
+        film_key = cur.fetchone()[0]
+        print film_key
 
-    query = ('INSERT INTO directors (name,gender) VALUES (%s,%s)')
-    cur.execute(query, (name,gender))
+        cur.execute("""SELECT id FROM directors WHERE name = ("%s")""" % (name))
+        director_key = cur.fetchone()[0]
+        print director_key
 
+        cur.execute('INSERT INTO directorfilm (director_id,film_id) VALUES ("%d","%d")' % \
+        (director_key,film_key))
 
 db.commit()
 
