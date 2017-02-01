@@ -1,5 +1,5 @@
 <?php
-
+echo ad ;
 namespace Tuto\TestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
