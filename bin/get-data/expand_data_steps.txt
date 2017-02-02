@@ -1,6 +1,6 @@
 
 input: 
-- list of film names
+- list of film names as csv
 - list of writer/ director names with tags and sources
 
 step 1:

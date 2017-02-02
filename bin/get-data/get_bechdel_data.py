@@ -64,7 +64,7 @@ def save_to_file():
 
 def add_to_file():
 #Get movie data already in the file
-    with open('movie_data.csv', 'rb') as csvfile:
+    with open('../../initial-data/movieinfo2.csv', 'rb') as csvfile:
         movie_data_update = list(csvfile)
 
 #Turn list of strings into list of lists
@@ -83,7 +83,7 @@ def add_to_file():
             if entry == imdbid:
                 movie[5] = False
 
-    with open('movie_data_complete.csv', 'wb') as db:
+    with open('../../initial-data/movieinfo2.csv', 'wb') as db:
         writer = csv.writer(db)
         for movie in movie_data_updated:
             writer.writerow((movie))
