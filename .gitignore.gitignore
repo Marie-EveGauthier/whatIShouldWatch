@@ -1,6 +1,8 @@
 
 .DS_Store
 
+*.[oa]
+
 
 # Cache and logs (Symfony2)
 /Symfony/app/cache/*
@@ -10,4 +12,6 @@
 
 # Parameters
 /Symfony/app/config/parameters.yml
+
 /Symfony/app/config/parameters.ini
+
