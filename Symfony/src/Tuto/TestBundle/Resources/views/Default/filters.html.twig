@@ -1,10 +1,27 @@
 {% extends "TutoTestBundle::base.html.twig" %}
+
+
+
 {% block filters %}
-<p>Looking to watch a movie respectful with women representation?</p>
+    <p>Looking to watch a movie respectful with women representation?</p>
+    <form method ="POST" action="{{path('tuto_test_resultat')}}">
+        <label class="checkbox">Most dialogues said by women
+            <input type="checkbox" class="checkbox" id="smsflash" name="woman_name">
+        </label>
+
+        <label class="check">bechdel test
+            <input type="checkbox" class="check" id="sms" name="button_bechdel">
+
+        </label>
+        <input type="submit"  name="envoyer">
+
+    </form>
+
+    <p>Looking to watch a movie respectful with women representation?</p>
     <ul>
         <li>Passed bechdel test</li>
         <li><Woman directed></li>
-        <li>Woman written</li>
-        <li>Most dialogues said by women</li>
+            <li>Woman written</li>
+            <li>Most dialogues said by women</li>
     </ul>
 {% endblock %}
