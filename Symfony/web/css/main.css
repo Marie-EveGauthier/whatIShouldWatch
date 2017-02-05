@@ -1,0 +1,32 @@
+/* Global --------------------------------------------------------------- */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 3%;
+  margin-top: 15%;
+  height: 100%;
+  font-family: 'Muli', sans-serif;
+  color: #555;
+  background-color: #fff;
+}
+
+/* Main headings ('Home', 'About', 'Diversity in Movie' )----------------- */
+h1 {
+  font-weight: 800;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  margin: 0px;
+}
+
+/* Second level headings ------------------------ */
+h2 {
+  font-weight: 200;
+  font-size: 1.3em;
+  font-style: italic;
+  text-align: center;
+  margin-top: 2%;
+  color: black;

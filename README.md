@@ -24,23 +24,33 @@ Ref: http://symfony.com/doc/2.7/doctrine.html
 
 
 
-Python Scripts
---------------
+Python Scripts to populate the database
+----------------------------------------
 
-Python scripts can be found in the folder /bin
+There are five scripts for the five tables.  You will need the python library mySQLdb installed
+ for them to work. 
 
-There are two scripts, one is called database_populate.py and one is called database.py
-You will not need database.py, it is the script I used to create a table in the database using python.
-For the official version we have used phpmyadmin to create the table.
+ As we added in all these files a shebang on the firts line,
+  under Unix-like operating systems, you have to type only the name of the file
+  without ```python/bin``` as mentionned below
 
-Use database_populate.py to fill the database with the real data. You will need
-the python library mySQLdb installed for it to work. Run the script in your terminal
-by typing
-     ```bin/python database_populate.py```
+Run the first script in your terminal by typing
 
-in the terminal. The script will prompt you for your mySQL password. If it works correctly,
-the script should insert 3 columns of data into the database: title, year, and bechdel test
+     ```python bin/python populate_database_film.py```
 
+in the terminal. The script will prompt you for your mySQL password and then your SQL port number.
+
+You can then run the scripts to populate the writer and director tables:
+
+     ```python bin/python populate_database_writers.py```
+
+     ```python bin/python populate_database_directors.py```
+
+You can then run the scripts to populate the connector tables:
+
+     ```python bin/python populate_database_writerfilm.py```
+
+     ```python bin/python populate_database_directorfilm.py```
 
 
 Symfony Variables

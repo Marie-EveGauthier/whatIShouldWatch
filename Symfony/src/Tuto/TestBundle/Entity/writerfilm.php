@@ -10,39 +10,41 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Tuto\TestBundle\Entity\writerfilmRepository")
  */
-class writerfilm
-{
+class writerfilm {
+
     /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+
+
+
+
      */
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_writer", type="integer")
+     * @ORM\ManyToOne(targetEntity="writers", inversedBy="id")
+     * @ORM\JoinColumn(name="idwriter", referencedColumnName="id")
+
      */
     private $idWriter;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_film", type="integer")
+
+     * @ORM\ManyToOne(targetEntity="Films", inversedBy="id")
+     * @ORM\JoinColumn(name="idfilm", referencedColumnName="id")
      */
     private $idFilm;
-
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -52,8 +54,7 @@ class writerfilm
      * @param integer $idWriter
      * @return writerfilm
      */
-    public function setIdWriter($idWriter)
-    {
+    public function setIdWriter($idWriter) {
         $this->idWriter = $idWriter;
 
         return $this;
@@ -62,10 +63,9 @@ class writerfilm
     /**
      * Get idWriter
      *
-     * @return integer 
+     * @return integer
      */
-    public function getIdWriter()
-    {
+    public function getIdWriter() {
         return $this->idWriter;
     }
 
@@ -75,8 +75,7 @@ class writerfilm
      * @param integer $idFilm
      * @return writerfilm
      */
-    public function setIdFilm($idFilm)
-    {
+    public function setIdFilm($idFilm) {
         $this->idFilm = $idFilm;
 
         return $this;
@@ -85,10 +84,10 @@ class writerfilm
     /**
      * Get idFilm
      *
-     * @return integer 
+     * @return integer
      */
-    public function getIdFilm()
-    {
+    public function getIdFilm() {
         return $this->idFilm;
     }
+
 }
