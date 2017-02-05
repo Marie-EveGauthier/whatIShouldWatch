@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import csv
 import MySQLdb
 import ast
@@ -9,7 +11,7 @@ with open('../initial-data/directors_data_gender.csv', 'rb') as csvfile:
 password = raw_input("Enter your mySQL password:")
 port_number = raw_input("Enter your mySQL port number if required:")
 if len(port_number) > 0:
-    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=str(port_number))
+    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=int(port_number))
 else:
     db = MySQLdb.connect("127.0.0.1","root",password,"sf2")
 cur = db.cursor()

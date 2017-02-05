@@ -1,3 +1,4 @@
+#!/usr/bin/python
 
 #Get data about movies from movieinfo csv file
 #movie_data structure: id, title, year, female dialogue, make dialogue, imdb
@@ -16,7 +17,7 @@ import MySQLdb
 password = raw_input("Enter your mySQL password:")
 port_number = raw_input("Enter your mySQL port number if required:")
 if len(port_number) > 0:
-    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=str(port_number))
+    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=int(port_number))
 else:
     db = MySQLdb.connect("127.0.0.1","root",password,"sf2")
 cur = db.cursor()
@@ -28,8 +29,8 @@ for item in movie_data:
     imdb_id = str(item[6])
     title = str(item[1])
     year = int(item[2])
-    dialogue_men = 50
-    dialogue_women = 50
+    dialogue_men = float(item[3])
+    dialogue_women = float(item[4])
 #    imdb = str(item[6])
     if item[5]=="True" :
         bechdel=True

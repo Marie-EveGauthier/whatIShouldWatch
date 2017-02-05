@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import csv
 import MySQLdb
 import ast
@@ -9,7 +11,7 @@ with open('../initial-data/writers_data_gender.csv', 'rb') as csvfile:
 password = raw_input("Enter your mySQL password:")
 port_number = raw_input("Enter your mySQL port number if required:")
 if len(port_number) > 0:
-    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=str(port_number))
+    db = MySQLdb.connect("127.0.0.1","root",password,"sf2",port=int(port_number))
 else:
     db = MySQLdb.connect("127.0.0.1","root",password,"sf2")
 cur = db.cursor()
@@ -28,7 +30,7 @@ for item in writers_data:
         writer_key = cur.fetchone()[0]
         print writer_key
 
-        cur.execute("""INSERT INTO writerfilm (id_writer,id_film) VALUES ("%d","%d")""" %
+        cur.execute("""INSERT INTO writerfilm (idwriter,idfilm) VALUES ("%d","%d")""" %
         (writer_key,film_key))
 
 db.commit()

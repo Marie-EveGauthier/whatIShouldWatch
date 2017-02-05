@@ -30,6 +30,10 @@ Python Scripts to populate the database
 There are five scripts for the five tables.  You will need the python library mySQLdb installed
  for them to work. 
 
+ As we added in all these files a shebang on the firts line,
+  under Unix-like operating systems, you have to type only the name of the file
+  without ```python/bin``` as mentionned below
+
 Run the first script in your terminal by typing
 
      ```python bin/python populate_database_film.py```
