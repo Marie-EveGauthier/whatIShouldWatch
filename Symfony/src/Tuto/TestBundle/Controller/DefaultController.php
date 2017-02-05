@@ -30,7 +30,7 @@ class DefaultController extends Controller {
             $query = $em->createQuery(
                     'SELECT p
     FROM TutoTestBundle:films p
-    WHERE p.dialogueWomen > p.dialogueMen and p.bechdel>0'
+    WHERE p.dialogueWomen > p.dialogueMen and p.bechdel>0 ORDER BY p.title'
             );
 
             $products = $query->getResult();
@@ -40,7 +40,7 @@ class DefaultController extends Controller {
             $query = $em->createQuery(
                     'SELECT p
     FROM TutoTestBundle:films p
-    WHERE p.dialogueWomen > p.dialogueMen'
+    WHERE p.dialogueWomen > p.dialogueMen ORDER BY p.title'
             );
 
             $products = $query->getResult();
@@ -50,7 +50,7 @@ class DefaultController extends Controller {
             $query = $em->createQuery(
                     'SELECT p
     FROM TutoTestBundle:films p
-    WHERE p.bechdel > 0'
+    WHERE p.bechdel > 0 ORDER BY p.title'
             );
 
             $products = $query->getResult();
