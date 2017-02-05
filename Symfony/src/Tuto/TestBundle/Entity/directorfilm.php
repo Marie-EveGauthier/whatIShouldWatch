@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Tuto\TestBundle\Entity\directorfilmRepository")
  */
-class directorfilm
-{
+class directorfilm {
+
     /**
      * @var integer
      *
@@ -22,27 +22,25 @@ class directorfilm
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="director_id", type="integer")
+      /**
+     * @ORM\ManyToOne(targetEntity="Directors", inversedBy="id")
+     * @ORM\JoinColumn(name="director_id", referencedColumnName="id")
+
      */
     private $directorId;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="film_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="Films", inversedBy="id")
+     * @ORM\JoinColumn(name="film_id", referencedColumnName="id")
      */
     private $filmId;
-
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -52,8 +50,7 @@ class directorfilm
      * @param integer $directorId
      * @return directorfilm
      */
-    public function setDirectorId($directorId)
-    {
+    public function setDirectorId($directorId) {
         $this->directorId = $directorId;
 
         return $this;
@@ -62,10 +59,9 @@ class directorfilm
     /**
      * Get directorId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getDirectorId()
-    {
+    public function getDirectorId() {
         return $this->directorId;
     }
 
@@ -75,8 +71,7 @@ class directorfilm
      * @param integer $filmId
      * @return directorfilm
      */
-    public function setFilmId($filmId)
-    {
+    public function setFilmId($filmId) {
         $this->filmId = $filmId;
 
         return $this;
@@ -85,10 +80,10 @@ class directorfilm
     /**
      * Get filmId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getFilmId()
-    {
+    public function getFilmId() {
         return $this->filmId;
     }
+
 }

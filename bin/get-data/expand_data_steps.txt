@@ -1,0 +1,24 @@
+
+input: 
+- list of film names as csv
+- list of writer/ director names with tags and sources
+
+step 1:
+film name -> omdb api -> imdb id, writer and director names, other info
+
+step 2:
+film name -> bechdel scrape -> bechdel result
+
+files:
+-->> a new movie info csv file
+-->> list of writers/ directors and tags
+
+step 3:
+files -> a script to take the data and produce files we can use to fill database
+movie info: name, year, bechdel, null dialogues, imdb id, poster source
+writer: name, imdb ids, tags
+director: name, imdb ids, tags
+
+
+Change to database populate script:
+check line isnt in database before adding it
