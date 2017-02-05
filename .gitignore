@@ -7,8 +7,13 @@
 /Symfony/app/logs/*
 !/Symfony/app/cache/.gitkeep
 !/Symfony/app/logs/.gitkeep
+
+# Temporary files 
 *~`
 
 # Parameters
 /Symfony/app/config/parameters.yml
 /Symfony/app/config/parameters.ini
+
+# Objects and archives 
+*.[oa]
