@@ -1,6 +1,7 @@
 {% extends "TutoTestBundle::base.html.twig" %}
 
 {% block filters %}
+<ul class="results">
     {% for a in products %}
         <li>{{ a.title }}</li>
         {% endfor %}
