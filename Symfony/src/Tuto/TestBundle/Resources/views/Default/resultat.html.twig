@@ -9,9 +9,18 @@
         <input type="checkbox" id="bechdel" name="bechdel">     
         <input type="submit" name="envoyer">
     </form>   
-<ul class="results">
+<ul class="results columns-3"">
     {% for a in products %}
-        <li>{{ a.title }}</li>
+        <li>
+            <p>{{ a.title }}, {{ a.year }}</p>
+        </li>
         {% endfor %}
 </ul>
 {% endblock %}
+
+{# <ul class="rig">
+	<li>
+		<img src="images/pri_001.jpg" />
+		<h3>Image Title</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+	</li> #}
