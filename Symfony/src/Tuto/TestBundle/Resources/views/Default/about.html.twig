@@ -1,0 +1,34 @@
+{% extends "TutoTestBundle::base.html.twig" %}
+
+{% block about %}
+    <h2>About</h2>
+    <h3>The Idea</h3>
+    <p>To build a recommender system that will highlight movies that tell the stories of people who have been invisibilized by mainstream hollywood</p>
+    <h3>How it Works</h3>
+    <p>Our tool allows the user to explore a data set of two thousand films based on the following filters:</p>
+    <ul>
+        <li>Whether the film passes the Bechdel Test.</li>
+        <li>Whether the film was written or directed by a woman.</li>
+        <li>Whether at least fifty percent of the dialogue spoken by main characters is said by characters who are women.</li>
+    </ul>
+    <h3>How We Got Our Data</h3>
+    <p>We found the work of <a href="http://polygraph.cool/films/">Matthew Daniels</a>, who did script analysis on a set of two thousand films.</br>
+        For each of these films, he calculated the amount of dialogue spoken by men and women main characters.</br> 
+        We used his data set as a starting point for our project.
+    </p>
+    <p><a href="Bechdeltest.com">Bechdeltest.com</a>is a website that aggregates user generated data 
+        on whether or not films pass the Bechdel test. 
+        We scraped bechdeltest.com to determine whether or not the films in the dataset of two thousand films 
+        passed the Bechdel test. Not all of those two thousand films were listed on bechdeltest.com.
+    </p>
+    <p>We used the <a href="http://www.omdbapi.com/">open movie database API</a> to get the names of the directors and writers of the films in our dataset. 
+    To determine the gender identity of the directors and writers on our list, 
+    we used several different data sources. First, we queried wikipedia with their names, 
+    and got back a list of categories which described how they were categorized on wikipedia. 
+    We marked which people were categorized as women directors or women writers. 
+    Not everyone has a page on wikipedia.</br>
+    We scraped <a href="http://www.imdb.com/">imdb (the internet movie database)</a> for the missing names 
+    and analyzed the pronouns in their imdb bio to determine the person’s gender.</br> 
+    We recognize that gender identity is complex and that our method for determining gender identity has limitations.
+    </p>
+{% endblock %}
