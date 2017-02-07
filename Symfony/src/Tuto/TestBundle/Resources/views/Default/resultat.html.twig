@@ -1,6 +1,14 @@
 {% extends "TutoTestBundle::base.html.twig" %}
 
-{% block filters %}
+{% block results %}
+<h2>Looking to watch a movie respectful with women representation?</h2>
+    <form method ="POST" action="{{path('tuto_test_resultat')}}">
+        <label for="dialogueWomen">Most dialogues said by women</label>
+        <input type="checkbox" id="dialogueWomen" name="dialogueWomen">     
+        <label for="bechdel">Passed the bechdel test</label>
+        <input type="checkbox" id="bechdel" name="bechdel">     
+        <input type="submit" name="envoyer">
+    </form>   
 <ul class="results">
     {% for a in products %}
         <li>{{ a.title }}</li>

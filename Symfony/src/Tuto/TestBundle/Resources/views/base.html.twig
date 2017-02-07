@@ -4,35 +4,42 @@
         <meta charset="UTF-8">
         <title>What Should I Watch</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
         {% block stylesheets %}
-    {# On charge le CSS de bootstrap depuis le site directement #}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  {% endblock %}
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        {% endblock %}
     </head>
     <body>
         <header>
-            <div class="topMenn">
+            <div class="topMenu">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
+                    <a href="{{ path("tuto_test_home") }}">
+                        <li>Home</li>
+                    </a>
+                    <a href="{{ path("about") }}">
+                        <li>About</li>
+                    </a>
                     <li>Diversity in movies</li>
-
                 </ul>
             </div>
+        </header>
+        <div class="site-wrap">
             <div class="title">
                 <h1>What Should I Watch?</h1>
-                <h2>Diversity in films</h2>
+                <h3>Diversity in films</h2>
+            </div>        
+            <div class="filters">
+                {% block filters %}{% endblock %}
             </div>
-        </header>
-        <div class="filter">
-            {% block filters %}{% endblock %}
+            <div class="results">
+                {% block results %}{% endblock %}
+            </div>   
+            <div class="about">
+                 {% block about %}{% endblock %}
+            </div>
         </div>
-
-        
-    <footer>
-        <p>Project created as part of LAB12. LAB12 is 12-week skills incubator featured by <a href="http://www.pitonneux.com/">les Pitonneux</a>
-    </footer>
-
+        <footer>
+            <p>Project created as part of LAB12. LAB12 is 12-week skills incubator featured by <a href="http://www.pitonneux.com/">les Pitonneux</a>
+        </footer>
     </body>
 </html>

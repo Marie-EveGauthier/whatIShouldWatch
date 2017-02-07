@@ -24,8 +24,8 @@ class DefaultController extends Controller {
 // for the request DBL
         $em = $this->getDoctrine()->getManager();
         // to get the value of the checkbox
-        $checked_woman = $this->get('request')->request->get('woman_name');
-        $checked_bechdel = $this->get('request')->request->get('button_bechdel');
+        $checked_woman = $this->get('request')->request->get('dialogueWomen');
+        $checked_bechdel = $this->get('request')->request->get('bechdel');
         if (($checked_woman) && ($checked_bechdel)) {
             $query = $em->createQuery(
                     'SELECT p
@@ -56,11 +56,16 @@ class DefaultController extends Controller {
             $products = $query->getResult();
             return $this->render('TutoTestBundle:Default:resultat.html.twig', array(
                         'products' => $products));
-//..
+// If there is no movie that match the search
         } else {
-            return $this->render('TutoTestBundle:Default:filters.html.twig')
+            return $this->render('TutoTestBundle:Default:noResult.html.twig')
             ;
         }
+    }
+
+    public function aboutAction() {
+
+        return $this->render('TutoTestBundle:Default:about.html.twig');
     }
 
 }

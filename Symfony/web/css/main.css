@@ -10,6 +10,13 @@ body {
   font-family: 'Muli', sans-serif;
   color: #555;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-wrap {
+  margin: 4%;
+  flex: 1;
 }
 
 /* Main headings ('Home', 'About', 'Diversity in Movie' )----------------- */
@@ -30,3 +37,66 @@ h2 {
   text-align: center;
   margin-top: 2%;
   color: black;
+}
+
+/* Descriptions under the headings for each page ------------------- */
+h3 {
+  font-style: italic;
+  font-size: 90%;
+  text-align: center;
+}
+
+/* List for results ----------------------------------- */
+ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+/* Link ----------------------- */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Top Menu ----------------------- */
+.topMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #E5E5E5;
+}
+
+.topMenu ul li {
+  float: right;
+  padding-left: 1.5em;
+  text-decoration: none;
+}
+
+.topMenu ul li a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topMenu ul li a:hover:not(.active) {background-color: #111;}
+
+.topMenu ul li a.active {background-color: #4CAF50;}
+
+.topMenu ul li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    .topMenu ul li.right, 
+    .topMenu ul li {float: none;}
+}
+
+
+/* footer --------------------- */
+
