@@ -31,7 +31,7 @@ for item in movie_data:
     year = int(item[2])
     dialogue_men = float(item[3])
     dialogue_women = float(item[4])
-    poster_url = str(item[7])
+    image_url = str(item[7])
 #    imdb = str(item[6])
     if item[5]=="True" :
         bechdel=True
@@ -45,10 +45,10 @@ for item in movie_data:
 
 
     if item[5]=="" :
-             cur.execute('INSERT INTO Films (title,year,dialogue_men,dialogue_women,imdb_id, poster_url) VALUES ("%s","%d","%d","%d","%s","%s")' % \
+             cur.execute('INSERT INTO Films (title,year,dialogue_men,dialogue_women,imdb_id, image_url) VALUES ("%s","%d","%d","%d","%s","%s")' % \
              (title,year,dialogue_men,dialogue_women,imdb_id,image_url))
     else:
-             cur.execute('INSERT INTO Films (title,year,bechdel,dialogue_men,dialogue_women,imdb_id, poster_url) VALUES ("%s","%d","%d","%d","%d","%s","%s")' % \
+             cur.execute('INSERT INTO Films (title,year,bechdel,dialogue_men,dialogue_women,imdb_id, image_url) VALUES ("%s","%d","%d","%d","%d","%s","%s")' % \
              (title,year,bechdel,dialogue_men,dialogue_women,imdb_id,image_url))
 #Commit changes
 db.commit()
