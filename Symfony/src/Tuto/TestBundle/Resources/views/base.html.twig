@@ -21,7 +21,9 @@
                     <a href="{{ path("about") }}">
                         <li>About</li>
                     </a>
-                    <li>Diversity in movies</li>
+                    <a href="{{ path("tuto_test_diversity") }}">
+                        <li>Diversity in movies</li>
+                    </a>
                 </ul>
             </div>
         </header>
@@ -38,6 +40,9 @@
             </div>   
             <div class="about">
                  {% block about %}{% endblock %}
+            </div>
+            <div class="diversity">
+                 {% block diversity %}{% endblock %}
             </div>
         </div>
         <footer>

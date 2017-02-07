@@ -50,7 +50,7 @@ class DefaultController extends Controller {
             $query = $em->createQuery(
                     'SELECT p
     FROM TutoTestBundle:films p
-    WHERE p.bechdel > 0 ORDER BY p.title'
+    WHERE p.bechdel > 0 GROUP BY p.year ORDER BY p.title'
             );
 
             $products = $query->getResult();
@@ -66,6 +66,11 @@ class DefaultController extends Controller {
     public function aboutAction() {
 
         return $this->render('TutoTestBundle:Default:about.html.twig');
+    }
+
+    public function diversityAction() {
+
+        return $this->render('TutoTestBundle:Default:diversity.html.twig');
     }
 
 }

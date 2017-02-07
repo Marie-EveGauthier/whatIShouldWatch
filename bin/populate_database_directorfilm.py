@@ -4,7 +4,7 @@ import csv
 import MySQLdb
 import ast
 
-with open('../initial-data/directors_data_gender.csv', 'rb') as csvfile:
+with open('initial-data/directors_data_gender.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile.read().decode('utf-8-sig').encode('utf-8').splitlines())
     directors_data = list(reader)
 

@@ -1,26 +1,26 @@
 {% extends "TutoTestBundle::base.html.twig" %}
 
 {% block results %}
-<h2>Looking to watch a movie respectful with women representation?</h2>
+<h2>Looking to watch a movie respectful to women's representation?</h2>
     <form method ="POST" action="{{path('tuto_test_resultat')}}">
-        <label for="dialogueWomen">Most dialogues said by women</label>
-        <input type="checkbox" id="dialogueWomen" name="dialogueWomen">     
-        <label for="bechdel">Passed the bechdel test</label>
-        <input type="checkbox" id="bechdel" name="bechdel">     
-        <input type="submit" name="envoyer">
+        <div class="filter">
+            <label for="dialogueWomen">Most dialogue said by women</label>
+            <input type="checkbox" id="dialogueWomen" name="dialogueWomen"> 
+        </div>
+        <div class="filter">        
+            <label for="bechdel">Passed the bechdel test</label>
+            <input type="checkbox" id="bechdel" name="bechdel">     
+        </div>
+        <input type="submit" name="envoyer" value="Show me the movies" class="search">
     </form>   
 <ul class="results columns-3"">
     {% for a in products %}
         <li>
-            <p>{{ a.title }}, {{ a.year }}</p>
+            <a href={{ 'http://www.imdb.com/title/' ~ a.getImdbId() }}>
+                <img src="{{ a.getImageUrl() }}" alt="Poster of : "/>
+                <h3>{{ a.title }}</h3>
+            </a>
         </li>
         {% endfor %}
 </ul>
 {% endblock %}
-
-{# <ul class="rig">
-	<li>
-		<img src="images/pri_001.jpg" />
-		<h3>Image Title</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-	</li> #}

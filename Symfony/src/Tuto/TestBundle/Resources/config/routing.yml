@@ -16,3 +16,8 @@ tuto_test_resultat:
 about:
     path:   /about/
     defaults: { _controller: TutoTestBundle:Default:about }
+
+
+tuto_test_diversity:
+    path:   /diversity/
+    defaults: { _controller: TutoTestBundle:Default:diversity }
